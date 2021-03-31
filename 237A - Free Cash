@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#define ll long long 
+
+using namespace std;
+
+int main()
+{
+    ll n,h,m,c =1,cash =1 , h0 ,m0 ;
+    cin>>n;
+    cin>>h>>m;
+    
+    while(--n)
+    {
+        cin>>h0>>m0;
+        if(h==h0 and m==m0)
+        {
+            c+=1;
+            if(c>cash)
+            {
+                cash = c ;
+            }
+        }
+        else
+        {
+            c = 1 ;
+        }
+        h = h0;
+        m = m0;
+    }
+    cout<<cash<<endl;
+    return 0;
+}
