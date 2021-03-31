@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#define ll long long
+using namespace std;
+int main ()
+{
+  ll n;
+  cin >> n;
+  ll total = 0;
+  while (n--)
+    {
+      ll a, g;
+      cin >> a >> g;
+      if (total + a <= 500)
+        	{
+        	  total += a;
+        	  cout << "A";
+        	}
+      else
+        	{
+        	  total -= g;
+        	  cout << "G";
+        	}
+    }
+  cout << endl;
+  return 0;
+}
