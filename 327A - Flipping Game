@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#define ll long long
+using namespace std;
+
+int main ()
+{
+    ll n,a,cnt = 0 , extra0 = 0 , extra0max = -1;
+    cin>>n;
+    while(n--)
+    {
+        cin>>a;
+        if(a==1)
+        {
+            cnt += 1;
+            if(extra0 > 0)
+            {
+                extra0 -= 1 ;
+            }
+        }else{
+            extra0++;
+            
+            if(extra0 > extra0max)
+            {
+                extra0max = extra0;
+            }
+        }
+    }
+    
+    cout<< cnt + extra0max << endl ;
+  	return 0;
+
+}
