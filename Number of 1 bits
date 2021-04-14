@@ -1,0 +1,10 @@
+   int setBits(int n) {
+       int counter = 0 ;
+       while(n!=0)
+       {
+           int rsbm = n & -n ;
+           n -= rsbm ;
+           counter++;
+       }
+       return counter; 
+    }
