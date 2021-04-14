@@ -1,0 +1,36 @@
+vector<int> singleNumber(vector<int> nums) 
+    {
+        vector<int> v ;
+        
+        int xxory = 0 ;
+        
+        for(int it = 0 ; it < nums.size() ; it++)
+        {
+            xxory = (xxory ^ nums[it]) ;
+        }
+        
+        int rsbm = (xxory & -xxory) ;
+        
+        int x = 0 ;
+        int y = 0 ; 
+        
+        for(int it = 0 ; it < nums.size() ; it++)
+        {
+            if((nums[it]&rsbm) == 0)
+            {
+                x = (x^nums[it]) ;
+            }else {
+                y = (y^nums[it]) ;
+            }
+        }
+        if(x<y){
+            v.push_back(x);
+            v.push_back(y);
+            return v ;
+        }else {
+            
+            v.push_back(y);
+            v.push_back(x);
+            return v ;
+        }
+    }
