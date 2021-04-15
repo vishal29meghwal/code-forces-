@@ -1,29 +1,22 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <bits/stdc++.h>
-#define ll long long 
+#include <cstdio>
 using namespace std;
-long long binpow(long long a, long long b, long long m) {
-    a %= m;
-    long long res = 1;
-    while (b > 0) {
-        if (b & 1)
-            res = res * a % m;
-        a = a * a % m;
-        b >>= 1;
-    }
-    return res;
+
+int main() {
+	int b, p, m, ans;
+
+	while (scanf("%d\n%d\n%d", &b, &p, &m) != EOF) {
+		ans = 1;
+		b %= m;
+
+		while (p) {
+			if (p & 1)
+				ans = (ans * b) % m;
+			b = (b * b) % m;
+			p >>= 1;
+
+		}
+		printf("%d\n", ans);
+	}
+	return 0 ;
 }
-int main()
-{
-    int t ;
-    cin>>t;
-    while(t--)
-    {
-        ll x,y,n;
-        cin>>x>>y>>n;
-        cout<<binpow(x,y,n)<<endl;
-    }
-    return 0;
-}
+
