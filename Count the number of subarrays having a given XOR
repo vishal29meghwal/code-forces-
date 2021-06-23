@@ -1,0 +1,57 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll                  long long
+#define scl(n)              scanf("%lld", &n)
+#define scf(n)              scanf("%lf", &n)
+#define pfl(x)              printf("%lld\n",x)
+#define M                   10000007
+#define pb                  push_back
+#define fo(i,n)             for (ll i=0;i<n;i++)
+#define fon0(i,n)           for (ll i=0;i<n-1;i++)
+#define fo1(i,n)            for (ll i=1;i<n;i++)
+#define fon1(i,n)           for(ll i=1;i<=n;i++)
+#define asort(a)            sort(a,a+n)
+#define dsort(a)            sort(a,a+n,greater<int>())
+#define pn                  printf("\n")
+#define debug               printf("I am here\n")
+#define ps                  printf(" ")
+#define no printf("NO\n")
+#define yes printf("YES\n")
+using namespace std;
+
+#include<bits/stdc++.h>
+using namespace std;
+int solve(vector<int>&a,int b)
+{
+    map<int,int> m ;
+    int xxor = 0 ;
+    int cnt = 0;
+    for(int i = 0 ; i < a.size() ; i++)
+    {
+        xxor ^= a[i];
+        
+        if(xxor == b)
+        {
+            cnt++;
+        }
+        if(m.find(xxor^b) != m.end())
+        {
+            cnt += m[xxor^b];
+        }
+        
+        m[xxor] = 1 ;
+    }
+    return cnt;
+}
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    vector<int>A;
+    int B ;
+    solve(A,B);
+    return 0;
+}
+ 
